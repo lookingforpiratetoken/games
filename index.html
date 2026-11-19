@@ -6,35 +6,35 @@
   <meta name="theme-color" content="#000000">
   <title></title>
   <style>
-    * { box-sizing: border-box; }
-    html, body { width: 100%; height: 100%; margin: 0; background: #000; overflow: hidden; }
-    body { font-family: Arial, sans-serif; }
-    #game { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
-    #fullscreen {
-      position: fixed; z-index: 5; top: max(10px, env(safe-area-inset-top)); right: max(10px, env(safe-area-inset-right));
-      padding: 9px 13px; border: 1px solid #777; border-radius: 3px;
-      background: #222; color: #fff; font: 14px Arial, sans-serif; cursor: pointer;
-      opacity: .85;
-    }
-    #fullscreen:active { background: #444; }
-    :fullscreen #fullscreen { display: none; }
+    *{box-sizing:border-box}
+    html,body{width:100%;height:100%;margin:0;background:#000;overflow:hidden}
+    body{display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif}
+    main{display:flex;flex-direction:column;align-items:center;gap:54px}
+    .atom{position:relative;width:190px;height:190px}
+    .nucleus{position:absolute;width:22px;height:22px;border-radius:50%;background:#ddd;left:84px;top:84px;box-shadow:0 0 22px #aaa}
+    .orbit{position:absolute;inset:27px 0;border:1px solid #777;border-radius:50%}
+    .orbit.one{transform:rotate(0deg)}
+    .orbit.two{transform:rotate(60deg)}
+    .orbit.three{transform:rotate(-60deg)}
+    .electron{position:absolute;width:8px;height:8px;background:#eee;border-radius:50%;top:0;left:calc(50% - 4px);box-shadow:0 0 10px #fff}
+    .orbit.one{animation:spin 5s linear infinite}
+    .orbit.two{animation:spin 7s linear infinite}
+    .orbit.three{animation:spin 9s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    a{display:flex;align-items:center;justify-content:center;min-width:150px;height:44px;padding:0 25px;border:1px solid #666;border-radius:3px;color:#fff;background:#171717;text-decoration:none;font:14px Arial,sans-serif}
+    a:active{background:#333}
+    @media(prefers-reduced-motion:reduce){.orbit{animation:none!important}}
   </style>
 </head>
 <body>
-  <iframe id="game" src="https://game316009.konggames.com/gamez/0031/6009/live/index.html"
-    title="Retro Bowl" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
-  <button id="fullscreen" type="button">Fullscreen</button>
-  <script>
-    const game = document.getElementById('game');
-    document.getElementById('fullscreen').addEventListener('click', async () => {
-      try {
-        if (game.requestFullscreen) await game.requestFullscreen();
-        else if (game.webkitRequestFullscreen) game.webkitRequestFullscreen();
-        else window.open('https://game316009.konggames.com/gamez/0031/6009/live/index.html', '_blank', 'noopener');
-      } catch (_) {
-        window.open('https://game316009.konggames.com/gamez/0031/6009/live/index.html', '_blank', 'noopener');
-      }
-    });
-  </script>
+  <main>
+    <div class="atom" aria-hidden="true">
+      <div class="nucleus"></div>
+      <div class="orbit one"><span class="electron"></span></div>
+      <div class="orbit two"><span class="electron"></span></div>
+      <div class="orbit three"><span class="electron"></span></div>
+    </div>
+    <a href="games.html">Games</a>
+  </main>
 </body>
 </html>

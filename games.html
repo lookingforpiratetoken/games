@@ -1,56 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080914">
-  <meta name="description" content="Browse the AuraGame browser game collection.">
-  <title>Games — AuraGame</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="games-page">
-  <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark">A</span><span>AURA<span class="brand-light">GAME</span></span></a>
-    <a class="back-link" href="index.html">← Back home</a>
-  </header>
-
-  <main class="library">
-    <div class="library-heading">
-      <div><p class="library-kicker">THE ARCADE IS OPEN</p><h1>THE <span class="gradient-text">GAMES.</span></h1><p class="library-subtitle">Pick a game. Jump in. Have fun.</p></div>
-      <span class="game-count" id="game-count">9 GAMES</span>
-    </div>
-
-    <label class="search-wrap">
-      <span class="search-icon">⌕</span>
-      <input id="game-search" type="search" placeholder="Search games..." autocomplete="off" aria-label="Search games">
-    </label>
-
-    <nav class="filters" aria-label="Filter games">
-      <button class="filter-btn active" data-filter="all" aria-pressed="true">All games</button>
-      <button class="filter-btn" data-filter="arcade" aria-pressed="false">Arcade</button>
-      <button class="filter-btn" data-filter="action" aria-pressed="false">Action</button>
-      <button class="filter-btn" data-filter="puzzle" aria-pressed="false">Puzzle</button>
-      <button class="filter-btn" data-filter="casual" aria-pressed="false">Casual</button>
-    </nav>
-
-    <section class="game-grid" aria-label="Game collection">
-      <article class="game-card" data-category="arcade"><div class="game-art" style="--glow:#3d8bba"><span class="game-symbol">🏈</span></div><div class="game-info"><div class="game-info-top"><h2>Retro Bowl</h2><span class="game-tag">SPORTS</span></div><p>Build your team, call the plays, and lead your franchise to victory.</p><a class="play-link" href="retro-bowl.html">PLAY HERE →</a></div></article>
-      <article class="game-card" data-category="arcade"><div class="game-art" style="--glow:#5a4cbd"><span class="game-symbol">🧱</span></div><div class="game-info"><div class="game-info-top"><h2>Tetris</h2><span class="game-tag">ARCADE</span></div><p>Stack the falling blocks and clear as many lines as you can.</p><a class="play-link" href="https://tetris.com/play-tetris" target="_blank" rel="noopener noreferrer">PLAY NOW ↗</a></div></article>
-      <article class="game-card" data-category="arcade"><div class="game-art" style="--glow:#267b9c"><span class="game-symbol">🐍</span></div><div class="game-info"><div class="game-info-top"><h2>Slither.io</h2><span class="game-tag">ARCADE</span></div><p>Grow your snake, collect glowing orbs, and outlast the crowd.</p><a class="play-link" href="https://slither.io/" target="_blank" rel="noopener noreferrer">PLAY NOW ↗</a></div></article>
-      <article class="game-card" data-category="action"><div class="game-art" style="--glow:#a44c65"><span class="game-symbol">⚔️</span></div><div class="game-info"><div class="game-info-top"><h2>Diep.io</h2><span class="game-tag">ACTION</span></div><p>Control a tank, upgrade your build, and battle other players.</p><a class="play-link" href="https://diep.io/" target="_blank" rel="noopener noreferrer">PLAY NOW ↗</a></div></article>
-      <article class="game-card" data-category="puzzle"><div class="game-art" style="--glow:#9b7139"><span class="game-symbol">🔢</span></div><div class="game-info"><div class="game-info-top"><h2>2048</h2><span class="game-tag">PUZZLE</span></div><p>Combine matching tiles and try to reach the 2048 tile.</p><a class="play-link" href="https://play2048.co/" target="_blank" rel="noopener noreferrer">PLAY NOW ↗</a></div></article>
-      <article class="game-card" data-category="casual"><div class="game-art" style="--glow:#378c70"><span class="game-symbol">🟢</span></div><div class="game-info"><div class="game-info-top"><h2>Agar.io</h2><span class="game-tag">CASUAL</span></div><p>Start small, absorb dots, and grow bigger than everyone else.</p><a class="play-link" href="https://agar.io/" target="_blank" rel="noopener noreferrer">PLAY NOW ↗</a></div></article>
-      <article class="game-card" data-category="arcade"><div class="game-art" style="--glow:#3e70b1"><span class="game-symbol">🏓</span></div><div class="game-info"><div class="game-info-top"><h2>Google Doodle Games</h2><span class="game-tag">ARCADE</span></div><p>Explore a collection of fun, quick games and interactive doodles.</p><a class="play-link" href="https://www.google.com/doodles" target="_blank" rel="noopener noreferrer">EXPLORE ↗</a></div></article>
-      <article class="game-card" data-category="puzzle"><div class="game-art" style="--glow:#8b5caa"><span class="game-symbol">♟️</span></div><div class="game-info"><div class="game-info-top"><h2>Lichess</h2><span class="game-tag">PUZZLE</span></div><p>Play chess, solve puzzles, and challenge players online.</p><a class="play-link" href="https://lichess.org/" target="_blank" rel="noopener noreferrer">PLAY NOW ↗</a></div></article>
-      <article class="game-card" data-category="casual"><div class="game-art" style="--glow:#a34f8d"><span class="game-symbol">🎮</span></div><div class="game-info"><div class="game-info-top"><h2>itch.io Games</h2><span class="game-tag">CASUAL</span></div><p>Discover thousands of indie games, including free browser games.</p><a class="play-link" href="https://itch.io/games/html5" target="_blank" rel="noopener noreferrer">BROWSE ↗</a></div></article>
-    </section>
-
-    <p class="no-results">No games found. Try another search.</p>
-    <footer class="library-footer"><span>© 2026 AURAGAME</span><span>MORE GAMES COMING SOON</span></footer>
-  </main>
-  <script src="script.js"></script>
-</body>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=./index.html"><title>Retro Bowl</title></head>
+<body style="margin:0;background:#000"></body>
 </html>
